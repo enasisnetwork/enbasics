@@ -1,0 +1,20 @@
+enbasics package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   enbasics.badges
+   enbasics.execution
+   enbasics.makefile
+
+Module contents
+---------------
+
+.. automodule:: enbasics
+   :members:
+   :show-inheritance:
+   :undoc-members:

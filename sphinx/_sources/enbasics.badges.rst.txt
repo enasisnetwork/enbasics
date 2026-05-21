@@ -1,0 +1,29 @@
+enbasics.badges package
+=======================
+
+Submodules
+----------
+
+enbasics.badges.badges module
+-----------------------------
+
+.. automodule:: enbasics.badges.badges
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enbasics.badges.common module
+-----------------------------
+
+.. automodule:: enbasics.badges.common
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: enbasics.badges
+   :members:
+   :show-inheritance:
+   :undoc-members:

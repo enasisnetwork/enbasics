@@ -1,0 +1,21 @@
+enbasics.execution package
+==========================
+
+Submodules
+----------
+
+enbasics.execution.badges module
+--------------------------------
+
+.. automodule:: enbasics.execution.badges
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: enbasics.execution
+   :members:
+   :show-inheritance:
+   :undoc-members:

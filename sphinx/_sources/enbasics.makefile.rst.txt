@@ -1,0 +1,21 @@
+enbasics.makefile package
+=========================
+
+Submodules
+----------
+
+enbasics.makefile.makefile module
+---------------------------------
+
+.. automodule:: enbasics.makefile.makefile
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: enbasics.makefile
+   :members:
+   :show-inheritance:
+   :undoc-members:
