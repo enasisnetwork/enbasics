@@ -1,0 +1,16 @@
+-r install.txt
+
+python-dateutil
+wand
+weasyprint
+encommon
+
+types-python-dateutil
+
+pytest
+
+pytest-clarity
+pytest-cov
+pytest-randomly
+pytest-sphinx
+pytest-xdist

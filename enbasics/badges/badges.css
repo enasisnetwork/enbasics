@@ -1,0 +1,140 @@
+/*
+Functions and routines associated with Enasis Network Project Basics.
+
+This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.
+*/
+
+
+
+/************************************/
+/* Colors used throughout the badge */
+/************************************/
+
+:root {
+
+  --background: 21, 21, 21;        /* 151515 */
+  --foreground: 245, 245, 245;     /* f5f5f5 */
+
+  --color-gray: 107, 107, 107;     /* 6b6b6b */
+  --color-red: 255, 102, 102;      /* ff6666 */
+  --color-yellow: 255, 255, 102;   /* ffff66 */
+  --color-green: 102, 255, 102;    /* 66ff66 */
+  --color-pink: 255, 0, 204;       /* ff00cc */
+  --color-teal: 102, 255, 255;     /* 66ffff */
+  --color-blue: 102, 204, 255; }   /* 66ccff */
+
+
+
+/************************************/
+/* Initial default for all elements */
+/************************************/
+
+* {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 0 0 0 0;
+  box-sizing: border-box;
+  color: rgba(var(--foreground), 1);
+  font-family: 'sans-serif';
+  font-size: 4px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.10px;
+  line-height: 5px;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  outline: none !important;
+  padding: 0 0 0 0;
+  page-break-after: avoid;
+  page-break-before: avoid;
+  page-break-inside: avoid;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+
+
+
+/*****************************************/
+/* Standard structure for badge elements */
+/*****************************************/
+
+table {
+  background-color: rgba(var(--background), 1); }
+
+table:not(:first-of-type) {
+  margin-top: 1px; }
+
+
+table>tbody>tr>td {
+  border-width: 0.1px 0.1px 0.1px 0.1px;
+  border-style: solid;
+  padding: 0.5px 2px 1px 2px;
+  vertical-align: middle; }
+
+
+
+/*****************************************/
+/* Extended structure for badge elements */
+/*****************************************/
+
+table>tbody>tr>td.label {
+  background-color: rgba(var(--color-gray), 0.5);
+  border-right-width: 0;
+  border-color: rgba(var(--color-gray), 1);
+  padding-right: 2.5px; }
+
+table>tbody>tr>td.value {
+  font-family: 'monospace'; }
+
+table>tbody>tr>td.count {
+  background-color: rgba(var(--color-gray), 0.25);
+  border-color: rgba(var(--color-gray), 1);
+  border-left-width: 0;
+  color: rgba(var(--foreground), 0.60);
+  font-family: 'monospace'; }
+
+table>tbody>tr>td.count:empty {
+  display: none; }
+
+table>tbody>tr>td.stamp {
+  background-color: rgba(var(--color-gray), 0.25);
+  border-left-width: 0;
+  border-color: rgba(var(--color-gray), 1);
+  color: rgba(var(--foreground), 0.60);
+  font-family: 'monospace'; }
+
+
+
+/*****************************************/
+/* Extended structure for badge elements */
+/*****************************************/
+
+table.gray>tbody>tr>td.value {
+  border-color: rgba(var(--foreground), 1);
+  background-color: rgba(var(--foreground), 0.4); }
+
+table.red>tbody>tr>td.value {
+  border-color: rgba(var(--color-red), 1);
+  background-color: rgba(var(--color-red), 0.4); }
+
+table.yellow>tbody>tr>td.value {
+  border-color: rgba(var(--color-yellow), 1);
+  background-color: rgba(var(--color-yellow), 0.4); }
+
+table.green>tbody>tr>td.value {
+  border-color: rgba(var(--color-green), 1);
+  background-color: rgba(var(--color-green), 0.4); }
+
+table.pink>tbody>tr>td.value {
+  border-color: rgba(var(--color-pink), 1);
+  background-color: rgba(var(--color-pink), 0.4); }
+
+table.teal>tbody>tr>td.value {
+  border-color: rgba(var(--color-teal), 1);
+  background-color: rgba(var(--color-teal), 0.4); }
+
+table.blue>tbody>tr>td.value {
+  border-color: rgba(var(--color-blue), 1);
+  background-color: rgba(var(--color-blue), 0.4); }

@@ -1,0 +1,51 @@
+"""
+Functions and routines associated with Enasis Network Project Basics.
+
+This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.
+"""
+
+
+
+from pathlib import Path
+from sys import flags
+
+from .makefile import makefile
+from .makefile import makeout
+from .makefile import makeread
+
+
+
+PROJECT = Path(__file__).parent
+
+VERSION = (
+    (PROJECT / 'version.txt')
+    .read_text(encoding='utf-8')
+    .splitlines()[0].strip())
+
+BOILER = (
+    Path(__file__)
+    .read_text(encoding='utf-8')
+    .splitlines()[1:5])
+
+WORKSPACE = PROJECT.parents[2]
+
+
+
+__version__ = VERSION
+
+
+
+if flags.optimize:  # NOCVR
+
+    raise RuntimeError(
+        'This library must not be'
+        ' run in optimized mode,'
+        ' assertions are required.')
+
+
+
+__all__ = (
+    'makefile',
+    'makeout',
+    'makeread')

@@ -1,0 +1,26 @@
+  help  Construct this helpful menu of recipes
+  cleanup  Executes all various cleanup for cache
+  linters  Executes all various linters and tests
+  linters-pass  Executes all various linters and tests
+  check  Executes all various linters and tests
+  check-revenv  Executes all various linters and tests
+  cleanup-pycache  Remove temporal generated cache files
+  cleanup-pytest  Remove temporal generated cache files
+  cleanup-coveragepy  Remove temporal generated cache files
+  cleanup-ruff  Remove temporal generated cache files
+  cleanup-mypy  Remove temporal generated cache files
+  cleanup-sphinx  Remove temporal generated cache files
+  venv-create  Create the virtual Python environments
+  venv-remove  Remove the virtual Python environments
+  pytest  Execute the relevant linters and tests
+  mypy  Execute the relevant linters and tests
+  flake8  Execute the relevant linters and tests
+  pylint  Execute the relevant linters and tests
+  ruff  Execute the relevant linters and tests
+  yamllint  Execute the relevant linters and tests
+  sphinx  Build HTML documentation using Sphinx
+  outdated  Check outdated packages in requirements
+  cloc  Breakdown lines of code within the project
+  pypackage  Create the Python compatible package
+  pypi-upload-test  Upload the Python package to PyPi test
+  pypi-upload-prod  Upload the Python package to PyPi prod
