@@ -1,0 +1,5 @@
+>>> make mypy
+  ● Executing mypy in enbasics..
+    DONE
+  ● Executing mypy in sphinx..
+    DONE

@@ -1,0 +1,10 @@
+{
+  "flake8": "passing",
+  "pylint": "passing",
+  "ruff": "passing",
+  "mypy": "passing",
+  "yamllint": "passing",
+  "pytest": "failing",
+  "coverage": "unknown",
+  "sphinx": "passing"
+}

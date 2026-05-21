@@ -1,0 +1,5 @@
+>>> make pylint
+  ● Executing pylint in enbasics..
+    DONE
+  ● Executing pylint in sphinx..
+    DONE

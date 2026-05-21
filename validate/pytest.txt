@@ -1,0 +1,403 @@
+>>> make pytest
+  ● Executing pytest in enbasics..
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
+cachedir: .pytest_cache
+Using --randomly-seed=271083425
+rootdir: /home/runner/work/enbasics/enbasics/main
+configfile: pyproject.toml
+plugins: xdist-3.8.0, clarity-1.0.1, cov-7.1.0, sphinx-0.7.1, randomly-4.1.0
+created: 4/4 workers
+4 workers [6 items]
+
+scheduling tests via LoadScheduling
+
+enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+enbasics/badges/test/test_badges.py::test_Badge 
+enbasics/makefile/test/test_makefile.py::test_makefile 
+enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw2] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+[gw0] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+[gw1] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+enbasics/badges/test/test_badges.py::test_Badge_cover 
+enbasics/execution/test/test_badges.py::test_arguments 
+[gw0] [ 66%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw1] [ 83%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw3] [100%] FAILED enbasics/badges/test/test_badges.py::test_Badge 
+
+=================================== FAILURES ===================================
+__________________________________ test_Badge __________________________________
+[gw3] linux -- Python 3.12.13 /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
+
+tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/popen-gw3/test_Badge0')
+
+    def test_Badge(
+        tmp_path: Path,
+    ) -> None:
+        """
+        Perform various tests associated with relevant routines.
+    
+        :param tmp_path: pytest object for temporal filesystem.
+        """
+    
+    
+        badge = Badge(
+            label='Testing',
+            value='success',
+            count='69420',
+            date='2026-04-20')
+    
+    
+        attrs = lattrs(badge)
+    
+        assert attrs == ['html']
+    
+    
+        assert inrepr(
+            'badges.Badge',
+            badge)
+    
+        assert isinstance(
+            hash(badge), int)
+    
+        assert instr(
+            'badges.Badge',
+            badge)
+    
+    
+        dumped = badge.html
+    
+    
+        sample_path = (
+            SAMPLES
+            / 'badge.html')
+    
+        if ENPYRWS is NCTrue:
+            save_text(
+                sample_path,
+                dumped)
+    
+        loaded = read_text(
+            sample_path)
+    
+        assert dumped == loaded
+    
+    
+        output = (
+            tmp_path
+            / 'badge.png')
+    
+>       badge.write(output)
+
+enbasics/badges/test/test_badges.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+enbasics/badges/badges.py:155: in write
+    origin = Image(
+.venv-package/lib/python3.12/site-packages/wand/image.py:9632: in __init__
+    self.read(file=file)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <wand.image.Image: (empty)>, file = None, filename = None
+blob = b'%PDF-1.7\n%\xf0\x9f\x96\xa4\n5 0 obj\n<</Filter /FlateDecode/Length 539>>\nstream\nx\xda\xa5U\xc1n\xdc \x10\xbd\xf3\...\xf44\xf6/\xda F\x91,\x9f\xd1&1\x8bE\xacb\xb3\xe3n[y\xe1\x07\xb1/\x07\x87\nendstream\nendobj\nstartxref\n5089\n%%EOF\n'
+background = None, colorspace = None, depth = None, extract = None
+format = None, height = None, interlace = None, resolution = None
+sampling_factors = None, units = None, width = None
+
+    def read(self, file=None, filename=None, blob=None, background=None,
+             colorspace=None, depth=None, extract=None, format=None,
+             height=None, interlace=None, resolution=None,
+             sampling_factors=None, units=None, width=None):
+        """Read new image into Image() object.
+    
+        :param blob: reads an image from the ``blob`` byte array
+        :type blob: :class:`bytes`
+        :param file: reads an image from the ``file`` object
+        :type file: file object
+        :param filename: reads an image from the ``filename`` string.
+                         Additional :ref:`read_mods` are supported.
+        :type filename: :class:`str`
+        :param background: set default background color.
+        :type background: :class:`Color`, :class:`str`
+        :param colorspace: set default colorspace.
+                           See :const:`COLORSPACE_TYPES`.
+        :type colorspace: :class:`str`
+        :param depth: sets bits per color sample. Usually ``8``, or ``16``.
+        :type depth: :class:`numbers.Integral`
+        :param format: sets which image decoder to read with. Helpful when
+                       reading ``blob`` data with ambiguous headers.
+        :type format: :class:`str`
+        :param height: used with ``width`` to define the canvas size. Useful
+                       for reading image streams.
+        :type height: :class:`numbers.Integral`
+        :param interlace: Defines the interlacing scheme for raw data streams.
+                          See :const:`INTERLACE_TYPES`.
+        :type interlace: :class:`str`
+        :param resolution: set a resolution value (DPI),
+                           useful for vectorial formats (like PDF)
+        :type resolution: :class:`collections.abc.Sequence`,
+                          :class:`numbers.Integral`
+        :param sampling_factors: set up/down stampling factors for YUV data
+                                 stream. Usually ``"4:2:2"``
+        :type sampling_factors: :class:`collections.abc.Sequence`,
+                                :class:`str`
+        :param units: used with ``resolution``, can either be
+                     ``'pixelperinch'``, or ``'pixelpercentimeter'``.
+        :type units: :class:`str`
+        :param width: used with ``height`` to define the canvas size. Useful
+                      for reading image streams.
+        :type width: :class:`numbers.Integral`
+    
+        .. versionadded:: 0.3.0
+    
+        .. versionchanged:: 0.5.7
+           Added ``units`` parameter.
+    
+        .. versionchanged:: 0.6.3
+           Added, or documented, optional pre-read parameters:
+           ``background``, ``colorspace``, ``depth``, ``format``, ``height``,
+           ``interlace``, ``sampling_factors``, & ``width``.
+        """
+        r = None
+        # Resolution must be set after image reading.
+        self._preamble_read(
+            background=background, colorspace=colorspace, depth=depth,
+            extract=extract, format=format, height=height, interlace=interlace,
+            resolution=resolution, sampling_factors=sampling_factors,
+            width=width
+        )
+        if file is not None:
+            is_fd = (isinstance(file, IOBase),
+                     hasattr(libc, 'fdopen'),
+                     callable(getattr(file, 'fileno', None)),
+                     hasattr(file, 'mode'))
+            if all(is_fd):
+                fd = libc.fdopen(file.fileno(), binary(file.mode))
+                r = library.MagickReadImageFile(self.wand, fd)
+            elif not callable(getattr(file, 'read', None)):
+                raise TypeError('file must be a readable file object'
+                                ', but the given object does not '
+                                'have read() method')
+            else:
+                blob = file.read()
+                file = None
+        if blob is not None:
+            if not isinstance(blob, abc.Iterable):
+                raise TypeError('blob must be iterable, not ' +
+                                repr(blob))
+            if not isinstance(blob, bytes):
+                blob = b''.join(blob)
+            r = library.MagickReadImageBlob(self.wand, blob, len(blob))
+        elif filename is not None:
+            filename = encode_filename(filename)
+            r = library.MagickReadImage(self.wand, filename)
+        if not r:
+            self.raise_exception()
+            msg = ('MagickReadImage returns false, but did not raise '
+                   'ImageMagick  exception. This can occur when a delegate '
+                   'is missing, or returns EXIT_SUCCESS without generating a '
+                   'raster.')
+>           raise WandRuntimeError(msg)
+E           wand.exceptions.WandRuntimeError: MagickReadImage returns false, but did not raise ImageMagick  exception. This can occur when a delegate is missing, or returns EXIT_SUCCESS without generating a raster.
+
+.venv-package/lib/python3.12/site-packages/wand/image.py:10493: WandRuntimeError
+------------------------------ Captured log call -------------------------------
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'maxp' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'maxp' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to load 'maxp'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'maxp'
+INFO     fontTools.subset:__init__.py:3595 maxp pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'cmap' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'cmap' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'post' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'post' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.018s to load 'cmap'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'cmap'
+INFO     fontTools.subset:__init__.py:3595 cmap pruned
+INFO     fontTools.subset:__init__.py:3579 fpgm dropped
+INFO     fontTools.subset:__init__.py:3579 prep dropped
+INFO     fontTools.subset:__init__.py:3579 cvt  dropped
+INFO     fontTools.subset:__init__.py:3579 kern dropped
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to load 'post'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'post'
+INFO     fontTools.subset:__init__.py:3595 post pruned
+INFO     fontTools.subset:__init__.py:3579 GPOS dropped
+INFO     fontTools.subset:__init__.py:3579 GSUB dropped
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'glyf' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'glyf' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'loca' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'loca' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'head' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'head' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.010s to load 'glyf'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'glyf'
+INFO     fontTools.subset:__init__.py:3595 glyf pruned
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to close glyph list over 'cmap'
+INFO     fontTools.subset:__init__.py:3635 Added gid0 to subset
+INFO     fontTools.subset:__init__.py:3647 Closing glyph list over 'MATH': 8 glyphs before
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'T', 'e', 'g', 'i', 'n', 's', 't']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 55, 72, 74, 76, 81, 86, 87]
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'MATH' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'MATH' table
+INFO     fontTools.subset:__init__.py:3653 Closed glyph list over 'MATH': 8 glyphs after
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'T', 'e', 'g', 'i', 'n', 's', 't']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 55, 72, 74, 76, 81, 86, 87]
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.006s to close glyph list over 'MATH'
+INFO     fontTools.subset:__init__.py:3708 Closing glyph list over 'glyf': 8 glyphs before
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'T', 'e', 'g', 'i', 'n', 's', 't']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 55, 72, 74, 76, 81, 86, 87]
+INFO     fontTools.subset:__init__.py:3714 Closed glyph list over 'glyf': 8 glyphs after
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'T', 'e', 'g', 'i', 'n', 's', 't']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 55, 72, 74, 76, 81, 86, 87]
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to close glyph list over 'glyf'
+INFO     fontTools.subset:__init__.py:3767 Retaining 8 glyphs
+INFO     fontTools.subset:__init__.py:3777 head subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 hhea subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 maxp subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 OS/2 subsetting not needed
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hmtx' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hmtx' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hhea' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hhea' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.004s to subset 'hmtx'
+INFO     fontTools.subset:__init__.py:3788 hmtx subsetted
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.005s to subset 'cmap'
+INFO     fontTools.subset:__init__.py:3788 cmap subsetted
+INFO     fontTools.subset:__init__.py:3777 loca subsetting not needed
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset 'post'
+INFO     fontTools.subset:__init__.py:3788 post subsetted
+INFO     fontTools.subset:__init__.py:3777 gasp subsetting not needed
+INFO     fontTools.subset:__init__.py:3790 FFTM NOT subset; don't know how to subset
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset 'MATH'
+INFO     fontTools.subset:__init__.py:3788 MATH subsetted
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'GDEF' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'GDEF' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.005s to subset 'GDEF'
+INFO     fontTools.subset:__init__.py:3788 GDEF subsetted
+INFO     fontTools.subset:__init__.py:3777 name subsetting not needed
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.002s to subset 'glyf'
+INFO     fontTools.subset:__init__.py:3788 glyf subsetted
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset GlyphOrder
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'head'
+INFO     fontTools.subset:__init__.py:3847 head pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'OS/2' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'OS/2' table
+INFO     fontTools.subset:__init__.py:3814 OS/2 Unicode ranges pruned: [0]
+INFO     fontTools.subset:__init__.py:3823 OS/2 CodePage ranges pruned: [0]
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'glyf'
+INFO     fontTools.subset:__init__.py:3847 glyf pruned
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'GDEF'
+INFO     fontTools.subset:__init__.py:3847 GDEF pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'name' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'name' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'gasp' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'gasp' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'FFTM' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'FFTM' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to prune 'name'
+INFO     fontTools.subset:__init__.py:3847 name pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'maxp' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'maxp' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to load 'maxp'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'maxp'
+INFO     fontTools.subset:__init__.py:3595 maxp pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'cmap' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'cmap' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'post' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'post' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.010s to load 'cmap'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'cmap'
+INFO     fontTools.subset:__init__.py:3595 cmap pruned
+INFO     fontTools.subset:__init__.py:3579 fpgm dropped
+INFO     fontTools.subset:__init__.py:3579 prep dropped
+INFO     fontTools.subset:__init__.py:3579 cvt  dropped
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to load 'post'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'post'
+INFO     fontTools.subset:__init__.py:3595 post pruned
+INFO     fontTools.subset:__init__.py:3579 GPOS dropped
+INFO     fontTools.subset:__init__.py:3579 GSUB dropped
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'glyf' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'glyf' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'loca' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'loca' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'head' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'head' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.005s to load 'glyf'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'glyf'
+INFO     fontTools.subset:__init__.py:3595 glyf pruned
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to close glyph list over 'cmap'
+INFO     fontTools.subset:__init__.py:3635 Added gid0 to subset
+INFO     fontTools.subset:__init__.py:3708 Closing glyph list over 'glyf': 11 glyphs before
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'c', 'e', 'four', 'nine', 's', 'six', 'slash', 'two', 'u', 'zero']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 18, 19, 21, 23, 25, 28, 70, 72, 86, 88]
+INFO     fontTools.subset:__init__.py:3714 Closed glyph list over 'glyf': 11 glyphs after
+INFO     fontTools.subset:__init__.py:460 Glyph names: ['.notdef', 'c', 'e', 'four', 'nine', 's', 'six', 'slash', 'two', 'u', 'zero']
+INFO     fontTools.subset:__init__.py:463 Glyph IDs:   [0, 18, 19, 21, 23, 25, 28, 70, 72, 86, 88]
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to close glyph list over 'glyf'
+INFO     fontTools.subset:__init__.py:3767 Retaining 11 glyphs
+INFO     fontTools.subset:__init__.py:3777 head subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 hhea subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 maxp subsetting not needed
+INFO     fontTools.subset:__init__.py:3777 OS/2 subsetting not needed
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hmtx' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hmtx' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hhea' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hhea' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to subset 'hmtx'
+INFO     fontTools.subset:__init__.py:3788 hmtx subsetted
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.003s to subset 'cmap'
+INFO     fontTools.subset:__init__.py:3788 cmap subsetted
+INFO     fontTools.subset:__init__.py:3777 loca subsetting not needed
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset 'post'
+INFO     fontTools.subset:__init__.py:3788 post subsetted
+INFO     fontTools.subset:__init__.py:3777 gasp subsetting not needed
+INFO     fontTools.subset:__init__.py:3790 FFTM NOT subset; don't know how to subset
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'GDEF' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'GDEF' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.002s to subset 'GDEF'
+INFO     fontTools.subset:__init__.py:3788 GDEF subsetted
+INFO     fontTools.subset:__init__.py:3777 name subsetting not needed
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to subset 'glyf'
+INFO     fontTools.subset:__init__.py:3788 glyf subsetted
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset GlyphOrder
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'head'
+INFO     fontTools.subset:__init__.py:3847 head pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'OS/2' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'OS/2' table
+INFO     fontTools.subset:__init__.py:3814 OS/2 Unicode ranges pruned: [0]
+INFO     fontTools.subset:__init__.py:3823 OS/2 CodePage ranges pruned: [0]
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'glyf'
+INFO     fontTools.subset:__init__.py:3847 glyf pruned
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to prune 'GDEF'
+INFO     fontTools.subset:__init__.py:3847 GDEF pruned
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'name' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'name' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'gasp' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'gasp' table
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'FFTM' table from disk
+DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'FFTM' table
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.001s to prune 'name'
+INFO     fontTools.subset:__init__.py:3847 name pruned
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.13-final-0 _______________
+
+Name                                      Stmts   Miss  Cover
+-------------------------------------------------------------
+enbasics/__init__.py                         10      0   100%
+enbasics/badges/__init__.py                   3      0   100%
+enbasics/badges/badges.py                    53      4    92%
+enbasics/badges/common.py                     2      0   100%
+enbasics/badges/test/__init__.py              2      0   100%
+enbasics/badges/test/test_badges.py          36      2    94%
+enbasics/execution/__init__.py                0      0   100%
+enbasics/execution/badges.py                 18      0   100%
+enbasics/execution/test/__init__.py           0      0   100%
+enbasics/execution/test/test_badges.py        4      0   100%
+enbasics/makefile/__init__.py                 4      0   100%
+enbasics/makefile/makefile.py                44      0   100%
+enbasics/makefile/test/__init__.py            2      0   100%
+enbasics/makefile/test/test_makefile.py      34      0   100%
+-------------------------------------------------------------
+TOTAL                                       212      6    97%
+=========================== short test summary info ============================
+FAILED enbasics/badges/test/test_badges.py::test_Badge - wand.exceptions.WandRuntimeError: MagickReadImage returns false, but did not raise ImageMagick  exception. This can occur when a delegate is missing, or returns EXIT_SUCCESS without generating a raster.
+========================= 1 failed, 5 passed in 5.50s ==========================
