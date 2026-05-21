@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=271083425
+Using --randomly-seed=585889300
 rootdir: /home/runner/work/enbasics/enbasics/main
 configfile: pyproject.toml
 plugins: xdist-3.8.0, clarity-1.0.1, cov-7.1.0, sphinx-0.7.1, randomly-4.1.0
@@ -12,17 +12,17 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/badges/test/test_badges.py::test_Badge 
 enbasics/makefile/test/test_makefile.py::test_makefile 
+enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw2] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
-[gw0] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
-[gw1] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw1] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw2] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+[gw0] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
 enbasics/badges/test/test_badges.py::test_Badge_cover 
 enbasics/execution/test/test_badges.py::test_arguments 
-[gw0] [ 66%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw1] [ 83%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw1] [ 66%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw0] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
 [gw3] [100%] FAILED enbasics/badges/test/test_badges.py::test_Badge 
 
 =================================== FAILURES ===================================
@@ -98,7 +98,7 @@ enbasics/badges/badges.py:155: in write
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 self = <wand.image.Image: (empty)>, file = None, filename = None
-blob = b'%PDF-1.7\n%\xf0\x9f\x96\xa4\n5 0 obj\n<</Filter /FlateDecode/Length 539>>\nstream\nx\xda\xa5U\xc1n\xdc \x10\xbd\xf3\...\xf44\xf6/\xda F\x91,\x9f\xd1&1\x8bE\xacb\xb3\xe3n[y\xe1\x07\xb1/\x07\x87\nendstream\nendobj\nstartxref\n5089\n%%EOF\n'
+blob = b'%PDF-1.7\n%\xf0\x9f\x96\xa4\n5 0 obj\n<</Filter /FlateDecode/Length 539>>\nstream\nx\xda\xa5U\xc1n\xdc \x10\xbd\xf3\...44\xf6/\xda F\x91,\x9f\xd1&1\x8bE\xacb\xb3\xe3n[y\xe1\x07\xb1\xd9\x07\x8c\nendstream\nendobj\nstartxref\n5090\n%%EOF\n'
 background = None, colorspace = None, depth = None, extract = None
 format = None, height = None, interlace = None, resolution = None
 sampling_factors = None, units = None, width = None
@@ -258,9 +258,9 @@ DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hmtx' table from disk
 DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hmtx' table
 DEBUG    fontTools.ttLib.ttFont:ttFont.py:811 Reading 'hhea' table from disk
 DEBUG    fontTools.ttLib.ttFont:ttFont.py:821 Decompiling 'hhea' table
-DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.004s to subset 'hmtx'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.005s to subset 'hmtx'
 INFO     fontTools.subset:__init__.py:3788 hmtx subsetted
-DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.005s to subset 'cmap'
+DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.006s to subset 'cmap'
 INFO     fontTools.subset:__init__.py:3788 cmap subsetted
 INFO     fontTools.subset:__init__.py:3777 loca subsetting not needed
 DEBUG    fontTools.subset.timer:loggingTools.py:357 Took 0.000s to subset 'post'
@@ -382,7 +382,7 @@ _______________ coverage: platform linux, python 3.12.13-final-0 _______________
 
 Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
-enbasics/__init__.py                         10      0   100%
+enbasics/__init__.py                         11      0   100%
 enbasics/badges/__init__.py                   3      0   100%
 enbasics/badges/badges.py                    53      4    92%
 enbasics/badges/common.py                     2      0   100%
@@ -397,7 +397,7 @@ enbasics/makefile/makefile.py                44      0   100%
 enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
-TOTAL                                       212      6    97%
+TOTAL                                       213      6    97%
 =========================== short test summary info ============================
 FAILED enbasics/badges/test/test_badges.py::test_Badge - wand.exceptions.WandRuntimeError: MagickReadImage returns false, but did not raise ImageMagick  exception. This can occur when a delegate is missing, or returns EXIT_SUCCESS without generating a raster.
-========================= 1 failed, 5 passed in 5.50s ==========================
+========================= 1 failed, 5 passed in 5.07s ==========================
