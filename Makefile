@@ -14,13 +14,15 @@ VENVD ?= .venv-develop
 
 
 
+MAKE_COLOR = 6
+
 MAKE_PRINT = \
-	$(PYTHON) -Bc 'if 1: \
+	@$(PYTHON) -Bc 'if 1: \
 		from enbasics import makeout; \
 		makeout( \
-			color=6, \
+			color=$(MAKE_COLOR), \
 			string="$(1)", \
- 			prefix="$(2)");'
+			prefix="$(2)");'
 
 MAKE_PR1NT = $(call MAKE_PRINT,$(1),text)
 MAKE_PR2NT = $(call MAKE_PRINT,$(1),base)
@@ -39,12 +41,12 @@ PROJECT := $(shell \
 help: .check-python
 	@## Construct this helpful menu of recipes
 	$(call MAKE_PRINT)
-	$(PYTHON) -Bc 'if 1: \
+	@$(PYTHON) -Bc 'if 1: \
 		from enbasics import makefile; \
 		from enbasics import PROJECT; \
 		from enbasics import VERSION; \
 		makefile( \
-			color=6, \
+			color=$(MAKE_COLOR), \
 			path="Makefile", \
 			name=PROJECT.name, \
 			version=VERSION);'
