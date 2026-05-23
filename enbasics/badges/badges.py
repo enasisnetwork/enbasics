@@ -98,11 +98,12 @@ class Badge:
                 _color = 'red'
 
 
-        if date is None:
-            date = (
-                datetime.now(
-                    tz=timezone.utc)
-                .strftime(_STAMP))
+        date = (
+            (datetime
+             .now(tz=timezone.utc)
+             .strftime(_STAMP))
+            if date is None
+            else date)
 
         try:
             stamp = (
