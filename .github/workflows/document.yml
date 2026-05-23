@@ -81,7 +81,7 @@ jobs:
 
 
       # Construct additional content
-      - name: Build documentaiton
+      - name: Build documentation
         id: sphinx
         working-directory: main
         run: make -s sphinx
