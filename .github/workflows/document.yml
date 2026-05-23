@@ -92,10 +92,6 @@ jobs:
             sphinx/html/ \
             ../static/sphinx/
 
-          cp \
-            sphinx/style.css \
-            ../static/sphinx/
-
 
       # Construct additional content
       - name: Cache the information
