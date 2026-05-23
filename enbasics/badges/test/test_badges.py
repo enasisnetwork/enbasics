@@ -98,37 +98,43 @@ def test_Badge_cover() -> None:
     dumped.append(
         Badge(
             label='Testing',
-            value='success')
+            value='success',
+            date='2026-04-20')
         .html)
 
     dumped.append(
         Badge(
             label='Testing',
-            value='failure')
+            value='failure',
+            date='2026-04-20')
         .html)
 
     dumped.append(
         Badge(
             label='Testing',
-            value='100%')
+            value='100%',
+            date='2026-04-20')
         .html)
 
     dumped.append(
         Badge(
             label='Testing',
-            value='81%')
+            value='81%',
+            date='2026-04-20')
         .html)
 
     dumped.append(
         Badge(
             label='Testing',
-            value='79%')
+            value='79%',
+            date='2026-04-20')
         .html)
 
     dumped.append(
         Badge(
             label='Testing',
-            value='unknown%')
+            value='unknown%',
+            date='2026-04-20')
         .html)
 
 
