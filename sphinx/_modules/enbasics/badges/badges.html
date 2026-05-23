@@ -395,11 +395,12 @@
                 <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
 
 
-        <span class="k">if</span> <span class="n">date</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span>
-                    <span class="n">tz</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
-                <span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">_STAMP</span><span class="p">))</span>
+        <span class="n">date</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="n">datetime</span>
+             <span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+             <span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">_STAMP</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">date</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">date</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">stamp</span> <span class="o">=</span> <span class="p">(</span>
