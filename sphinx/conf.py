@@ -45,8 +45,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.pydantic']
 
+html_static_path = ['_static']
 html_theme = 'pydata_sphinx_theme'
-html_favicon = 'icon.png'
+html_favicon = '_static/icon.png'
 
 autodoc_member_order = 'bysource'
 
@@ -89,9 +90,7 @@ def setup(
     Perform extra setup when called on by Sphinx processes.
     """
 
-    app.add_css_file(
-        (SPHINX / 'style.css')
-        .as_posix())
+    app.add_css_file('style.css')
 
     app.connect(
         'autodoc-process-docstring',
