@@ -2,7 +2,7 @@ Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
 enbasics/__init__.py                         11      0   100%
 enbasics/badges/__init__.py                   3      0   100%
-enbasics/badges/badges.py                    53      0   100%
+enbasics/badges/badges.py                    53      1    98%
 enbasics/badges/common.py                     2      0   100%
 enbasics/badges/test/__init__.py              2      0   100%
 enbasics/badges/test/test_badges.py          36      0   100%
@@ -15,4 +15,4 @@ enbasics/makefile/makefile.py                44      0   100%
 enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
-TOTAL                                       213      0   100%
+TOTAL                                       213      1    99%
