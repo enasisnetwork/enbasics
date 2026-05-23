@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=4107818763
+Using --randomly-seed=3015166720
 rootdir: /home/runner/work/enbasics/enbasics/main
 configfile: pyproject.toml
 plugins: xdist-3.8.0, clarity-1.0.1, cov-7.1.0, sphinx-0.7.1, randomly-4.1.0
@@ -13,17 +13,17 @@ created: 4/4 workers
 scheduling tests via LoadScheduling
 
 enbasics/makefile/test/test_makefile.py::test_makefile 
-enbasics/execution/test/test_badges.py::test_arguments 
-enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw3] [ 16%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
-[gw0] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw1] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
-[gw2] [ 66%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
-enbasics/badges/test/test_badges.py::test_Badge_cover 
+enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/badges/test/test_badges.py::test_Badge 
-[gw1] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw0] [100%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
+[gw1] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw0] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+[gw2] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+enbasics/execution/test/test_badges.py::test_arguments 
+enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw1] [ 66%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw0] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw3] [100%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.12.13-final-0 _______________
@@ -32,7 +32,7 @@ Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
 enbasics/__init__.py                         11      0   100%
 enbasics/badges/__init__.py                   3      0   100%
-enbasics/badges/badges.py                    53      1    98%
+enbasics/badges/badges.py                    52      0   100%
 enbasics/badges/common.py                     2      0   100%
 enbasics/badges/test/__init__.py              2      0   100%
 enbasics/badges/test/test_badges.py          36      0   100%
@@ -45,8 +45,8 @@ enbasics/makefile/makefile.py                44      0   100%
 enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
-TOTAL                                       213      1    99%
-============================== 6 passed in 5.51s ===============================
+TOTAL                                       212      0   100%
+============================== 6 passed in 5.52s ===============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
