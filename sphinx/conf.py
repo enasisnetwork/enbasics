@@ -54,8 +54,13 @@ autodoc_member_order = 'bysource'
 always_document_param_types = True
 
 intersphinx_mapping = {
+    'encommon': ('https://enasisnetwork.github.io/encommon/sphinx', None),
+    'dateutil': ('https://dateutil.readthedocs.io/en/stable', None),
     'pytest': ('https://docs.pytest.org/latest', None),
-    'python': ('https://docs.python.org/3', None)}
+    'python': ('https://docs.python.org/3', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master', None),
+    'wand': ('https://docs.wand-py.org/en/stable', None),
+    'weasyprint': ('https://doc.courtbouillon.org/weasyprint/stable', None)}
 
 
 
