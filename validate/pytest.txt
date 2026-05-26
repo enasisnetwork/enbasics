@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=499522633
+Using --randomly-seed=3183154897
 rootdir: /home/runner/work/enbasics/enbasics/main
 configfile: pyproject.toml
 plugins: xdist-3.8.0, clarity-1.0.1, cov-7.1.0, sphinx-0.7.1, randomly-4.1.0
@@ -12,18 +12,18 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-enbasics/badges/test/test_badges.py::test_Badge 
-enbasics/makefile/test/test_makefile.py::test_makefile_cover 
-enbasics/badges/test/test_badges.py::test_Badge_cover 
-enbasics/execution/test/test_badges.py::test_arguments 
-[gw2] [ 16%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
-[gw1] [ 33%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw3] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw1] [ 66%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw0] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
 enbasics/makefile/test/test_makefile.py::test_makefile 
-[gw0] [100%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+enbasics/execution/test/test_badges.py::test_arguments 
+[gw2] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw3] [ 33%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw1] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+[gw0] [ 66%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+enbasics/badges/test/test_badges.py::test_Badge 
+enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw1] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw0] [100%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.12.13-final-0 _______________
@@ -46,7 +46,7 @@ enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
 TOTAL                                       212      0   100%
-============================== 6 passed in 5.38s ===============================
+============================== 6 passed in 5.01s ===============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
