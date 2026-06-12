@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=467864702
+Using --randomly-seed=887858298
 rootdir: /home/runner/work/enbasics/enbasics/main
 configfile: pyproject.toml
 plugins: sphinx-0.7.1, clarity-1.0.1, cov-7.1.0, xdist-3.8.0, randomly-4.1.0
@@ -17,11 +17,11 @@ enbasics/makefile/test/test_makefile.py::test_makefile
 enbasics/execution/test/test_badges.py::test_arguments 
 enbasics/makefile/test/test_makefile.py::test_makeout 
 [gw0] [ 16%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
-[gw2] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw3] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw0] [ 66%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw1] [ 83%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+[gw1] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
+[gw2] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+[gw3] [ 66%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
+[gw0] [ 83%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
 enbasics/badges/test/test_badges.py::test_Badge 
 [gw1] [100%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
 
@@ -46,7 +46,7 @@ enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
 TOTAL                                       212      0   100%
-============================== 6 passed in 6.16s ===============================
+============================== 6 passed in 5.73s ===============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
