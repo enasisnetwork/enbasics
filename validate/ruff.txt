@@ -1,5 +1,494 @@
 >>> make ruff
   ● Executing ruff in enbasics..
-    DONE
-  ● Executing ruff in sphinx..
-    DONE
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/__init__.py:10:1
+   |
+10 | / from pathlib import Path
+11 | | from sys import flags
+12 | |
+13 | | from .makefile import makefile
+14 | | from .makefile import makeout
+15 | | from .makefile import makeread
+   | |______________________________^
+   |
+help: Organize imports
+   |
+12 |
+   - from .makefile import makefile
+   - from .makefile import makeout
+   - from .makefile import makeread
+   -
+   -
+13 + from .makefile import makefile, makeout, makeread
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/badges/__init__.py:10:1
+   |
+10 | / from .badges import Badge
+11 | | from .common import BadgeColors
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+12 |
+   -
+   -
+13 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/badges/badges.py:10:1
+   |
+10 | / from datetime import datetime
+11 | | from datetime import timezone
+12 | | from io import BytesIO
+13 | | from pathlib import Path
+14 | | from typing import Literal
+15 | | from typing import Optional
+16 | |
+17 | | from dateutil import parser
+18 | | from dateutil.parser import ParserError
+19 | |
+20 | | from .common import BadgeColors
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from datetime import datetime
+   - from datetime import timezone
+10 + from datetime import datetime, timezone
+11 | from io import BytesIO
+12 | from pathlib import Path
+   - from typing import Literal
+   - from typing import Optional
+13 + from typing import Literal, Optional
+14 |
+--------------------------------------------------------------------------------
+18 | from .common import BadgeColors
+   -
+   -
+19 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/badges/badges.py:48:16
+   |
+46 |         value: str,
+47 |         *,
+48 |         count: Optional[int | str] = None,
+   |                ^^^^^^^^^^^^^^^^^^^
+49 |         color: Optional[Literal[BadgeColors]] = None,
+50 |         date: Optional[str] = None,
+   |
+help: Convert to `X | None`
+   |
+47 |         *,
+   -         count: Optional[int | str] = None,
+48 +         count: int | str | None = None,
+49 |         color: Optional[Literal[BadgeColors]] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/badges/badges.py:49:16
+   |
+47 |         *,
+48 |         count: Optional[int | str] = None,
+49 |         color: Optional[Literal[BadgeColors]] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+50 |         date: Optional[str] = None,
+51 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+48 |         count: Optional[int | str] = None,
+   -         color: Optional[Literal[BadgeColors]] = None,
+49 +         color: Literal[BadgeColors] | None = None,
+50 |         date: Optional[str] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/badges/badges.py:50:15
+   |
+48 |         count: Optional[int | str] = None,
+49 |         color: Optional[Literal[BadgeColors]] = None,
+50 |         date: Optional[str] = None,
+   |               ^^^^^^^^^^^^^
+51 |     ) -> None:
+52 |         """
+   |
+help: Convert to `X | None`
+   |
+49 |         color: Optional[Literal[BadgeColors]] = None,
+   -         date: Optional[str] = None,
+50 +         date: str | None = None,
+51 |     ) -> None:
+   |
+
+UP017 [*] Use `datetime.UTC` alias
+   --> enbasics/badges/badges.py:103:22
+    |
+101 |         date = (
+102 |             (datetime
+103 |              .now(tz=timezone.utc)
+    |                      ^^^^^^^^^^^^
+104 |              .strftime(_STAMP))
+105 |             if date is None
+    |
+help: Convert to `datetime.UTC` alias
+    |
+10  | from datetime import datetime
+    - from datetime import timezone
+11  + from datetime import timezone, UTC
+12  | from io import BytesIO
+--------------------------------------------------------------------------------
+102 |             (datetime
+    -              .now(tz=timezone.utc)
+103 +              .now(tz=UTC)
+104 |              .strftime(_STAMP))
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/badges/common.py:10:1
+   |
+10 | from typing import Literal
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | BadgeColors = Literal[
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/badges/test/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/badges/test/test_badges.py:10:1
+   |
+10 | / from pathlib import Path
+11 | |
+12 | | from encommon.types.classes import lattrs
+13 | | from encommon.types.strings import inrepr
+14 | | from encommon.types.strings import instr
+15 | | from encommon.types.types import NCTrue
+16 | | from encommon.utils.files import read_text
+17 | | from encommon.utils.files import save_text
+18 | | from encommon.utils.sample import ENPYRWS
+19 | |
+20 | | from . import SAMPLES
+21 | | from ..badges import Badge
+   | |__________________________^
+   |
+help: Organize imports
+   |
+12 | from encommon.types.classes import lattrs
+   - from encommon.types.strings import inrepr
+   - from encommon.types.strings import instr
+13 + from encommon.types.strings import inrepr, instr
+14 | from encommon.types.types import NCTrue
+   - from encommon.utils.files import read_text
+   - from encommon.utils.files import save_text
+15 + from encommon.utils.files import read_text, save_text
+16 | from encommon.utils.sample import ENPYRWS
+17 |
+18 + from ..badges import Badge
+19 | from . import SAMPLES
+   - from ..badges import Badge
+   -
+20 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/execution/badges.py:10:1
+   |
+10 | / from argparse import ArgumentParser
+11 | | from sys import argv as sys_argv
+12 | | from typing import Any
+13 | | from typing import Optional
+14 | | from typing import get_args
+15 | |
+16 | | from ..badges.badges import Badge
+17 | | from ..badges.common import BadgeColors
+   | |_______________________________________^
+   |
+help: Organize imports
+   |
+11 | from sys import argv as sys_argv
+   - from typing import Any
+   - from typing import Optional
+   - from typing import get_args
+12 + from typing import Any, Optional, get_args
+13 |
+14 | from ..badges.badges import Badge
+15 | from ..badges.common import BadgeColors
+   -
+16 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/execution/badges.py:22:11
+   |
+21 | def arguments(
+22 |     args: Optional[list[str]] = None,
+   |           ^^^^^^^^^^^^^^^^^^^
+23 | ) -> dict[str, Any]:
+24 |     """
+   |
+help: Convert to `X | None`
+   |
+21 | def arguments(
+   -     args: Optional[list[str]] = None,
+22 +     args: list[str] | None = None,
+23 | ) -> dict[str, Any]:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> enbasics/execution/badges.py:108:11
+    |
+106 | def execution(
+107 |     # NOCVR
+108 |     args: Optional[list[str]] = None,
+    |           ^^^^^^^^^^^^^^^^^^^
+109 | ) -> None:
+110 |     """
+    |
+help: Convert to `X | None`
+    |
+107 |     # NOCVR
+    -     args: Optional[list[str]] = None,
+108 +     args: list[str] | None = None,
+109 | ) -> None:
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/execution/test/test_badges.py:10:1
+   |
+10 | from ..badges import arguments
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_arguments() -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/makefile/__init__.py:10:1
+   |
+10 | / from .makefile import makefile
+11 | | from .makefile import makeout
+12 | | from .makefile import makeread
+   | |______________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from .makefile import makefile
+   - from .makefile import makeout
+   - from .makefile import makeread
+   -
+   -
+10 + from .makefile import makefile, makeout, makeread
+11 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/makefile/makefile.py:10:1
+   |
+10 | / from pathlib import Path
+11 | | from re import MULTILINE
+12 | | from re import findall as re_findall
+13 | | from re import sub as re_sub
+14 | | from sys import stdout
+15 | | from typing import Literal
+16 | | from typing import Optional
+   | |___________________________^
+   |
+help: Organize imports
+   |
+14 | from sys import stdout
+   - from typing import Literal
+   - from typing import Optional
+   -
+   -
+15 + from typing import Literal, Optional
+16 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/makefile/makefile.py:32:13
+   |
+30 | def makeout(
+31 |     string: str,
+32 |     prefix: Optional[_PREFIX] = None,
+   |             ^^^^^^^^^^^^^^^^^
+33 |     method: Literal['stdout', 'print'] = 'stdout',
+34 |     color: Optional[int] = 7,
+   |
+help: Convert to `X | None`
+   |
+31 |     string: str,
+   -     prefix: Optional[_PREFIX] = None,
+32 +     prefix: _PREFIX | None = None,
+33 |     method: Literal['stdout', 'print'] = 'stdout',
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> enbasics/makefile/makefile.py:34:12
+   |
+32 |     prefix: Optional[_PREFIX] = None,
+33 |     method: Literal['stdout', 'print'] = 'stdout',
+34 |     color: Optional[int] = 7,
+   |            ^^^^^^^^^^^^^
+35 | ) -> None:
+36 |     """
+   |
+help: Convert to `X | None`
+   |
+33 |     method: Literal['stdout', 'print'] = 'stdout',
+   -     color: Optional[int] = 7,
+34 +     color: int | None = 7,
+35 | ) -> None:
+   |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `T201`)
+  --> enbasics/makefile/makefile.py:94:24
+   |
+92 |         stdout.write(f'{string}\n')
+93 |     else:
+94 |         print(string)  # noqa: T201
+   |                        ^^^^^^^^^^^^
+   |
+help: Remove unused `noqa` directive
+   |
+93 |     else:
+   -         print(string)  # noqa: T201
+94 +         print(string)
+95 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> enbasics/makefile/makefile.py:119:11
+    |
+117 |     path: Path | str = 'Makefile',
+118 |     *,
+119 |     name: Optional[str] = None,
+    |           ^^^^^^^^^^^^^
+120 |     version: Optional[str] = None,
+121 |     method: Literal['stdout', 'print'] = 'stdout',
+    |
+help: Convert to `X | None`
+    |
+118 |     *,
+    -     name: Optional[str] = None,
+119 +     name: str | None = None,
+120 |     version: Optional[str] = None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> enbasics/makefile/makefile.py:120:14
+    |
+118 |     *,
+119 |     name: Optional[str] = None,
+120 |     version: Optional[str] = None,
+    |              ^^^^^^^^^^^^^
+121 |     method: Literal['stdout', 'print'] = 'stdout',
+122 |     color: Optional[int] = 7,
+    |
+help: Convert to `X | None`
+    |
+119 |     name: Optional[str] = None,
+    -     version: Optional[str] = None,
+120 +     version: str | None = None,
+121 |     method: Literal['stdout', 'print'] = 'stdout',
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> enbasics/makefile/makefile.py:122:12
+    |
+120 |     version: Optional[str] = None,
+121 |     method: Literal['stdout', 'print'] = 'stdout',
+122 |     color: Optional[int] = 7,
+    |            ^^^^^^^^^^^^^
+123 | ) -> None:
+124 |     """
+    |
+help: Convert to `X | None`
+    |
+121 |     method: Literal['stdout', 'print'] = 'stdout',
+    -     color: Optional[int] = 7,
+122 +     color: int | None = 7,
+123 | ) -> None:
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/makefile/test/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> enbasics/makefile/test/test_makefile.py:10:1
+   |
+10 | / from pathlib import Path
+11 | |
+12 | | from _pytest.capture import CaptureFixture
+13 | |
+14 | | from encommon.types.types import NCTrue
+15 | | from encommon.utils.files import read_text
+16 | | from encommon.utils.files import save_text
+17 | | from encommon.utils.sample import ENPYRWS
+18 | | from encommon.utils.stdout import strip_ansi
+19 | |
+20 | | from . import SAMPLES
+21 | | from ..makefile import makefile
+22 | | from ..makefile import makeout
+23 | | from ... import PROJECT
+   | |_______________________^
+   |
+help: Organize imports
+   |
+12 | from _pytest.capture import CaptureFixture
+   -
+13 | from encommon.types.types import NCTrue
+   - from encommon.utils.files import read_text
+   - from encommon.utils.files import save_text
+14 + from encommon.utils.files import read_text, save_text
+15 | from encommon.utils.sample import ENPYRWS
+16 | from encommon.utils.stdout import strip_ansi
+17 |
+18 + from ... import PROJECT
+19 + from ..makefile import makefile, makeout
+20 | from . import SAMPLES
+   - from ..makefile import makefile
+   - from ..makefile import makeout
+   - from ... import PROJECT
+   -
+21 |
+   |
+
