@@ -10,7 +10,6 @@ I001 [*] Import block is un-sorted or un-formatted
 14 | | from .makefile import makeout
 15 | | from .makefile import makeread
    | |______________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -29,7 +28,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .badges import Badge
 11 | | from .common import BadgeColors
    | |_______________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -53,7 +51,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | |
 20 | | from .common import BadgeColors
    | |_______________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -155,7 +152,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from typing import Literal
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -169,7 +165,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -194,7 +189,6 @@ I001 [*] Import block is un-sorted or un-formatted
 20 | | from . import SAMPLES
 21 | | from ..badges import Badge
    | |__________________________^
-   |
 help: Organize imports
    |
 12 | from encommon.types.classes import lattrs
@@ -226,7 +220,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | | from ..badges.badges import Badge
 17 | | from ..badges.common import BadgeColors
    | |_______________________________________^
-   |
 help: Organize imports
    |
 11 | from sys import argv as sys_argv
@@ -281,7 +274,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..badges import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -296,7 +288,6 @@ I001 [*] Import block is un-sorted or un-formatted
 11 | | from .makefile import makeout
 12 | | from .makefile import makeread
    | |______________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -320,7 +311,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from typing import Literal
 16 | | from typing import Optional
    | |___________________________^
-   |
 help: Organize imports
    |
 14 | from sys import stdout
@@ -375,7 +365,6 @@ RUF100 [*] Unused `noqa` directive (non-enabled: `T201`)
 93 |     else:
 94 |         print(string)  # noqa: T201
    |                        ^^^^^^^^^^^^
-   |
 help: Remove unused `noqa` directive
    |
 93 |     else:
@@ -443,7 +432,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -470,7 +458,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | | from ..makefile import makeout
 23 | | from ... import PROJECT
    | |_______________________^
-   |
 help: Organize imports
    |
 12 | from _pytest.capture import CaptureFixture
