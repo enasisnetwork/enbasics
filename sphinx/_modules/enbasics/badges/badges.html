@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enbasics.badges.badges</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Project Basics.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -316,23 +316,23 @@
 
 
 
-<span class="n">_STAMP</span> <span class="o">=</span> <span class="s1">&#39;%m/</span><span class="si">%d</span><span class="s1">/%Y&#39;</span>
+<span class="n">_STAMP</span> <span class="o">=</span> <span class="s1">'%m/</span><span class="si">%d</span><span class="s1">/%Y'</span>
 
-<span class="n">_SUCCESS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;passing&#39;</span><span class="p">]</span>
-<span class="n">_FAILURE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">,</span> <span class="s1">&#39;failing&#39;</span><span class="p">]</span>
+<span class="n">_SUCCESS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'success'</span><span class="p">,</span> <span class="s1">'passing'</span><span class="p">]</span>
+<span class="n">_FAILURE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'failure'</span><span class="p">,</span> <span class="s1">'failing'</span><span class="p">]</span>
 
 <span class="n">_STYLES</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-    <span class="o">/</span> <span class="s1">&#39;badges.css&#39;</span><span class="p">)</span>
+    <span class="o">/</span> <span class="s1">'badges.css'</span><span class="p">)</span>
 
 
 
 <div class="viewcode-block" id="Badge">
 <a class="viewcode-back" href="../../../index.html#enbasics.badges.badges.Badge">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Badge</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the badge image and output to the image file.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">html</span><span class="p">:</span> <span class="nb">str</span>
 
@@ -346,53 +346,53 @@
         <span class="n">color</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="n">BadgeColors</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">_value</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">value</span>
             <span class="o">.</span><span class="n">strip</span><span class="p">()</span>
             <span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
-        <span class="k">if</span> <span class="n">_value</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;unknown&#39;</span><span class="p">:</span>
-            <span class="n">_value</span> <span class="o">=</span> <span class="s1">&#39;unknown&#39;</span>
+        <span class="k">if</span> <span class="n">_value</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'unknown'</span><span class="p">:</span>
+            <span class="n">_value</span> <span class="o">=</span> <span class="s1">'unknown'</span>
 
 
         <span class="n">_count</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s1">&#39;&#39;</span>
+            <span class="s1">''</span>
             <span class="k">if</span> <span class="n">count</span> <span class="ow">is</span> <span class="kc">None</span>
             <span class="k">else</span> <span class="n">count</span><span class="p">)</span>
 
 
         <span class="n">_color</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s1">&#39;gray&#39;</span>
+            <span class="s1">'gray'</span>
             <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span>
             <span class="k">else</span> <span class="n">color</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
-            <span class="k">if</span> <span class="n">_value</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;%&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_value</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'%'</span><span class="p">:</span>
 
                 <span class="n">eulav</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
                     <span class="nb">float</span><span class="p">(</span><span class="n">_value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
                 <span class="k">if</span> <span class="n">eulav</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
-                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">'green'</span>
 
                 <span class="k">elif</span> <span class="n">eulav</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
-                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;yellow&#39;</span>
+                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">'yellow'</span>
 
                 <span class="k">elif</span> <span class="n">eulav</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+                    <span class="n">_color</span> <span class="o">=</span> <span class="s1">'red'</span>
 
-                <span class="n">_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">eulav</span><span class="si">}</span><span class="s1">%&#39;</span>
+                <span class="n">_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">eulav</span><span class="si">}</span><span class="s1">%'</span>
 
             <span class="k">if</span> <span class="n">_value</span> <span class="ow">in</span> <span class="n">_SUCCESS</span><span class="p">:</span>
-                <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+                <span class="n">_color</span> <span class="o">=</span> <span class="s1">'green'</span>
 
             <span class="k">if</span> <span class="n">_value</span> <span class="ow">in</span> <span class="n">_FAILURE</span><span class="p">:</span>
-                <span class="n">_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+                <span class="n">_color</span> <span class="o">=</span> <span class="s1">'red'</span>
 
 
         <span class="n">date</span> <span class="o">=</span> <span class="p">(</span>
@@ -408,23 +408,23 @@
                 <span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">_STAMP</span><span class="p">))</span>
 
         <span class="k">except</span> <span class="n">ParserError</span><span class="p">:</span>
-            <span class="n">stamp</span> <span class="o">=</span> <span class="s1">&#39;unknown&#39;</span>
+            <span class="n">stamp</span> <span class="o">=</span> <span class="s1">'unknown'</span>
 
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">html</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
-            <span class="s1">&#39;&lt;style&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">_STYLES</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;&lt;/style&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;&lt;table class=&quot;</span><span class="si">{</span><span class="n">_color</span><span class="si">}</span><span class="s1">&quot;&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;  &lt;tbody&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;    &lt;tr&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;      &lt;td class=&quot;label&quot;&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1">&lt;/td&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;      &lt;td class=&quot;value&quot;&gt;</span><span class="si">{</span><span class="n">_value</span><span class="si">}</span><span class="s1">&lt;/td&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;      &lt;td class=&quot;count&quot;&gt;</span><span class="si">{</span><span class="n">_count</span><span class="si">}</span><span class="s1">&lt;/td&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;      &lt;td class=&quot;stamp&quot;&gt;</span><span class="si">{</span><span class="n">stamp</span><span class="si">}</span><span class="s1">&lt;/td&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;    &lt;/tr&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;  &lt;/tbody&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;&lt;/table&gt;&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">html</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+            <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">_STYLES</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'&lt;table class="</span><span class="si">{</span><span class="n">_color</span><span class="si">}</span><span class="s1">"&gt;'</span><span class="p">,</span>
+            <span class="s1">'  &lt;tbody&gt;'</span><span class="p">,</span>
+            <span class="s1">'    &lt;tr&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'      &lt;td class="label"&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1">&lt;/td&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'      &lt;td class="value"&gt;</span><span class="si">{</span><span class="n">_value</span><span class="si">}</span><span class="s1">&lt;/td&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'      &lt;td class="count"&gt;</span><span class="si">{</span><span class="n">_count</span><span class="si">}</span><span class="s1">&lt;/td&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'      &lt;td class="stamp"&gt;</span><span class="si">{</span><span class="n">stamp</span><span class="si">}</span><span class="s1">&lt;/td&gt;'</span><span class="p">,</span>
+            <span class="s1">'    &lt;/tr&gt;'</span><span class="p">,</span>
+            <span class="s1">'  &lt;/tbody&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/table&gt;'</span><span class="p">])</span>
 
 
 <div class="viewcode-block" id="Badge.write">
@@ -433,11 +433,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Ouput badge to the complete or relative filesystem path.</span>
 
 <span class="sd">        :param output: Where to write the generated badge image.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">wand.color</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>  <span class="c1"># type: ignore[import-untyped]</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">wand.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># type: ignore[import-untyped]</span>
@@ -459,9 +459,9 @@
         <span class="k">with</span> <span class="n">origin</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
 
             <span class="n">image</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span>
-                <span class="n">Color</span><span class="p">(</span><span class="s1">&#39;transparent&#39;</span><span class="p">))</span>
+                <span class="n">Color</span><span class="p">(</span><span class="s1">'transparent'</span><span class="p">))</span>
 
-            <span class="n">image</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;png&#39;</span>
+            <span class="n">image</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">'png'</span>
 
             <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
                 <span class="n">filename</span><span class="o">=</span><span class="n">output</span><span class="p">)</span></div>

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enbasics.execution.badges</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Project Basics.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -318,12 +318,12 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">arguments</span><span class="p">(</span>
     <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct arguments which are associated with the file.</span>
 
 <span class="sd">    :param args: Override the source for the main arguments.</span>
 <span class="sd">    :returns: Construct arguments from command line options.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
 
@@ -331,44 +331,44 @@
 
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--output&#39;</span><span class="p">,</span>
+        <span class="s1">'--output'</span><span class="p">,</span>
         <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;complete or relative &#39;</span>
-            <span class="s1">&#39;path to output file&#39;</span><span class="p">))</span>
+            <span class="s1">'complete or relative '</span>
+            <span class="s1">'path to output file'</span><span class="p">))</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--label&#39;</span><span class="p">,</span>
+        <span class="s1">'--label'</span><span class="p">,</span>
         <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;friendly name for &#39;</span>
-            <span class="s1">&#39;first badge cell&#39;</span><span class="p">))</span>
+            <span class="s1">'friendly name for '</span>
+            <span class="s1">'first badge cell'</span><span class="p">))</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--value&#39;</span><span class="p">,</span>
+        <span class="s1">'--value'</span><span class="p">,</span>
         <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;actual value for &#39;</span>
-            <span class="s1">&#39;second badge cell&#39;</span><span class="p">))</span>
+            <span class="s1">'actual value for '</span>
+            <span class="s1">'second badge cell'</span><span class="p">))</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--count&#39;</span><span class="p">,</span>
+        <span class="s1">'--count'</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;optional count for &#39;</span>
-            <span class="s1">&#39;third badge cell&#39;</span><span class="p">))</span>
+            <span class="s1">'optional count for '</span>
+            <span class="s1">'third badge cell'</span><span class="p">))</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--color&#39;</span><span class="p">,</span>
+        <span class="s1">'--color'</span><span class="p">,</span>
         <span class="n">choices</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">get_args</span><span class="p">(</span><span class="n">BadgeColors</span><span class="p">)),</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;color for the value &#39;</span>
-            <span class="s1">&#39;else automatic&#39;</span><span class="p">))</span>
+            <span class="s1">'color for the value '</span>
+            <span class="s1">'else automatic'</span><span class="p">))</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s1">&#39;--date&#39;</span><span class="p">,</span>
+        <span class="s1">'--date'</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;date for the value &#39;</span>
-            <span class="s1">&#39;else automatic&#39;</span><span class="p">))</span>
+            <span class="s1">'date for the value '</span>
+            <span class="s1">'else automatic'</span><span class="p">))</span>
 
 
     <span class="k">return</span> <span class="nb">vars</span><span class="p">(</span>
@@ -384,20 +384,20 @@
     <span class="c1"># NOCVR</span>
     <span class="n">pargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform whatever operation is associated with the file.</span>
 
 <span class="sd">    :param pargs: Arguments specified from the command line.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">output</span> <span class="o">=</span> <span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">pargs</span><span class="p">[</span><span class="s1">'output'</span><span class="p">]</span>
 
     <span class="n">badge</span> <span class="o">=</span> <span class="n">Badge</span><span class="p">(</span>
-        <span class="n">label</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span>
-        <span class="n">count</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">],</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span>
-        <span class="n">date</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">'label'</span><span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">'value'</span><span class="p">],</span>
+        <span class="n">count</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">'count'</span><span class="p">],</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">'color'</span><span class="p">],</span>
+        <span class="n">date</span><span class="o">=</span><span class="n">pargs</span><span class="p">[</span><span class="s1">'date'</span><span class="p">])</span>
 
     <span class="n">badge</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span></div>
 
@@ -410,11 +410,11 @@
     <span class="c1"># NOCVR</span>
     <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform whatever operation is associated with the file.</span>
 
 <span class="sd">    :param args: Override the source for the main arguments.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">operation</span><span class="p">(</span>
         <span class="n">arguments</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
@@ -422,7 +422,7 @@
 
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">execution</span><span class="p">()</span>  <span class="c1"># NOCVR</span>
 </pre></div>
 

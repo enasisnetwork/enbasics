@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enbasics.makefile.makefile</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Project Basics.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -313,12 +313,12 @@
 
 
 <span class="n">_PREFIX</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
-    <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;more&#39;</span><span class="p">]</span>
+    <span class="s1">'text'</span><span class="p">,</span> <span class="s1">'base'</span><span class="p">,</span> <span class="s1">'more'</span><span class="p">]</span>
 
 <span class="n">_PATTERN</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sa">r</span><span class="s1">&#39;\n([a-z]\S+)\:(\s+</span><span class="se">\\</span><span class="s1">\n)?&#39;</span>
-    <span class="sa">r</span><span class="s1">&#39;((\s+[^\n]+){1,2})?\n&#39;</span>
-    <span class="sa">r</span><span class="s1">&#39;\s+\@##\s([^\n]+)?\n&#39;</span><span class="p">)</span>
+    <span class="sa">r</span><span class="s1">'\n([a-z]\S+)\:(\s+</span><span class="se">\\</span><span class="s1">\n)?'</span>
+    <span class="sa">r</span><span class="s1">'((\s+[^\n]+){1,2})?\n'</span>
+    <span class="sa">r</span><span class="s1">'\s+\@##\s([^\n]+)?\n'</span><span class="p">)</span>
 
 
 
@@ -327,10 +327,10 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">makeout</span><span class="p">(</span>
     <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_PREFIX</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">method</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;print&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;stdout&#39;</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'stdout'</span><span class="p">,</span> <span class="s1">'print'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'stdout'</span><span class="p">,</span>
     <span class="n">color</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Print the ANSI colorized string to the standard output.</span>
 
 <span class="sd">    .. note::</span>
@@ -340,44 +340,44 @@
 <span class="sd">    :param prefix: Determine if and which prefix prepended.</span>
 <span class="sd">    :param method: Which method for standard output is used.</span>
 <span class="sd">    :param color: Optional color override default ANSI gray.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\&lt;c([\d\;]+)\&gt;&#39;</span>
-    <span class="n">replace</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\033[0;\1m&#39;</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'\&lt;c([\d\;]+)\&gt;'</span>
+    <span class="n">replace</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'\033[0;\1m'</span>
 
 
     <span class="k">if</span> <span class="n">prefix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">string</span>
-            <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">' '</span><span class="p">))</span>
 
         <span class="n">padding</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">''</span>
 
-        <span class="k">if</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s1">&#39;base&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s1">'base'</span><span class="p">:</span>
             <span class="n">padding</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">&#39;&lt;cL&gt;&gt;&gt;&gt;&lt;c0&gt;&#39;</span>
+            <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">'&lt;cL&gt;&gt;&gt;&gt;&lt;c0&gt;'</span>
 
-        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s1">&#39;more&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s1">'more'</span><span class="p">:</span>
             <span class="n">padding</span> <span class="o">=</span> <span class="mi">2</span>
-            <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">&#39;&lt;cL&gt;●&lt;c0&gt;&#39;</span>
+            <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">'&lt;cL&gt;●&lt;c0&gt;'</span>
 
-        <span class="n">space</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span>
+        <span class="n">space</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">' '</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">space</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">padding</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">_prefix</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">space</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">padding</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">_prefix</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
 
     <span class="n">string</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s1">'</span>
         <span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-            <span class="s1">&#39;&lt;cD&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;&lt;c3</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;&#39;</span><span class="p">)</span>
+            <span class="s1">'&lt;cD&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'&lt;c3</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;'</span><span class="p">)</span>
         <span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-            <span class="s1">&#39;&lt;cL&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;&#39;</span><span class="p">))</span>
+            <span class="s1">'&lt;cL&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;'</span><span class="p">))</span>
 
     <span class="n">string</span> <span class="o">=</span> <span class="n">re_sub</span><span class="p">(</span>
         <span class="n">pattern</span><span class="p">,</span>
@@ -385,8 +385,8 @@
         <span class="n">string</span><span class="p">)</span>
 
 
-    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;stdout&#39;</span><span class="p">:</span>
-        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">'stdout'</span><span class="p">:</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>  <span class="c1"># noqa: T201</span></div>
 
@@ -398,18 +398,18 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">makeread</span><span class="p">(</span>
     <span class="n">path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return the contents using the provided filesystem path.</span>
 
 <span class="sd">    :param path: Complete or relative path to the makefile.</span>
 <span class="sd">    :returns: Contents using the provided filesystem path.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span>
-        <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
+        <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span></div>
 
 
 
@@ -417,14 +417,14 @@
 <div class="viewcode-block" id="makefile">
 <a class="viewcode-back" href="../../../index.html#enbasics.makefile">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">makefile</span><span class="p">(</span>
-    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Makefile&#39;</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'Makefile'</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">method</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;print&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;stdout&#39;</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'stdout'</span><span class="p">,</span> <span class="s1">'print'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'stdout'</span><span class="p">,</span>
     <span class="n">color</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Print the Makefile summary in the human friendly format.</span>
 
 <span class="sd">    :param path: Complete or relative path to the makefile.</span>
@@ -432,7 +432,7 @@
 <span class="sd">    :param version: Version of projects to show beside name.</span>
 <span class="sd">    :param method: Which method for standard output is used.</span>
 <span class="sd">    :param color: Optional color override default ANSI gray.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">contents</span> <span class="o">=</span> <span class="n">makeread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
@@ -448,23 +448,23 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="n">_version</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;/&lt;c37&gt;</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span>
+            <span class="sa">f</span><span class="s1">'/&lt;c37&gt;</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s1">&lt;c0&gt;'</span>
             <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-            <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">else</span> <span class="s1">''</span><span class="p">)</span>
 
         <span class="n">makeout</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39; &lt;c3</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="si">{</span><span class="n">_version</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39; &lt;c90&gt;Makefile&lt;c0&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">' &lt;c3</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="si">{</span><span class="n">_version</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">' &lt;c90&gt;Makefile&lt;c0&gt;</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
 
     <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  &lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
-             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">  &#39;</span>
-             <span class="sa">f</span><span class="s1">&#39;&lt;c0&gt;</span><span class="si">{</span><span class="n">match</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+            <span class="p">(</span><span class="sa">f</span><span class="s1">'  &lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;'</span>
+             <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">  '</span>
+             <span class="sa">f</span><span class="s1">'&lt;c0&gt;</span><span class="si">{</span><span class="n">match</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">))</span>
 
         <span class="n">makeout</span><span class="p">(</span>
             <span class="n">string</span><span class="o">=</span><span class="n">string</span><span class="p">,</span>
