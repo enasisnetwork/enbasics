@@ -42,9 +42,15 @@ include = ["enbasics", "enbasics.*"]
 
 
 
-[tool.ruff.lint.per-file-ignores]
+[tool.ruff.lint]
 
-"sphinx/conf.py" = ["E402"]
+ignore = [
+  "I001",    # flake8 handles imports
+  "RUF100",  # we use noqa for flake8
+  "UP045",   # still allow Optional
+  "UP007",   # still allow Union
+  "RUF022",  # drives order in docs
+  "BLE001"]  # allow blind exception
 
 
 
