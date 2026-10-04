@@ -7,8 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
+from datetime import UTC
 from datetime import datetime
-from datetime import timezone
 from io import BytesIO
 from pathlib import Path
 from typing import Literal
@@ -99,8 +99,7 @@ class Badge:
 
 
         date = (
-            (datetime
-             .now(tz=timezone.utc)
+            (datetime.now(tz=UTC)
              .strftime(_STAMP))
             if date is None
             else date)

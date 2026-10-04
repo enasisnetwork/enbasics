@@ -77,7 +77,7 @@ def boilerplate(
     """
 
     if what != 'module':
-        return None
+        return
 
     length = len(BOILER)
 

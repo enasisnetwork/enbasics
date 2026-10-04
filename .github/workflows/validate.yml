@@ -64,7 +64,7 @@ jobs:
         run: make -s venv-create
 
 
-      # Validate the Python project
+      # Validate the local project
       - name: Run all validators
         run: make -s check
 
@@ -125,7 +125,7 @@ jobs:
         run: mkdir -p validate
 
 
-      # Validate the Python project
+      # Validate the local project
       - name: Lint using Flake8
         id: flake8
         working-directory: main
@@ -135,7 +135,7 @@ jobs:
             | tee ../static/validate/flake8.txt
         continue-on-error: true
 
-      # Validate the Python project
+      # Validate the local project
       - name: Lint using Pylint
         id: pylint
         working-directory: main
@@ -145,7 +145,7 @@ jobs:
             | tee ../static/validate/pylint.txt
         continue-on-error: true
 
-      # Validate the Python project
+      # Validate the local project
       - name: Lint using Ruff
         id: ruff
         working-directory: main
@@ -155,7 +155,7 @@ jobs:
             | tee ../static/validate/ruff.txt
         continue-on-error: true
 
-      # Validate the Python project
+      # Validate the local project
       - name: Lint using Mypy
         id: mypy
         working-directory: main
@@ -165,7 +165,7 @@ jobs:
             | tee ../static/validate/mypy.txt
         continue-on-error: true
 
-      # Validate the Python project
+      # Validate the local project
       - name: Lint using YAMLlint
         id: yamllint
         working-directory: main
@@ -175,7 +175,7 @@ jobs:
             | tee ../static/validate/yamllint.txt
         continue-on-error: true
 
-      # Validate the Python project
+      # Validate the local project
       - name: Test with Pytest
         id: pytest
         working-directory: main
