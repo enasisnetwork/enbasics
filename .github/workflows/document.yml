@@ -30,7 +30,7 @@ jobs:
   #################
   ## Python 3.12 ##
   #################
-  validate312:
+  document312:
     name: Python 3.12
     runs-on: ubuntu-latest
     env:
