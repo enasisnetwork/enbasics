@@ -1,28 +1,28 @@
 >>> make pytest
   ● Executing pytest in enbasics..
 ============================= test session starts ==============================
-platform linux -- Python 3.12.15, pytest-9.2.0, pluggy-1.7.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0 -- /home/runner/work/enbasics/enbasics/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=1745667940
+Using --randomly-seed=3546527389
 rootdir: /home/runner/work/enbasics/enbasics/main
 configfile: pyproject.toml
-plugins: xdist-3.8.0, randomly-5.0.0, sphinx-0.7.1, clarity-1.0.1, cov-7.1.0
+plugins: cov-7.1.0, clarity-1.0.1, xdist-3.8.0, sphinx-0.7.1, randomly-5.0.0
 created: 4/4 workers
 4 workers [6 items]
 
 scheduling tests via LoadScheduling
 
+enbasics/makefile/test/test_makefile.py::test_makeout 
+enbasics/execution/test/test_badges.py::test_arguments 
 enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/makefile/test/test_makefile.py::test_makefile 
-enbasics/execution/test/test_badges.py::test_arguments 
-enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw3] [ 16%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
-[gw0] [ 33%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw0] [ 16%] PASSED enbasics/execution/test/test_badges.py::test_arguments 
+[gw1] [ 33%] PASSED enbasics/makefile/test/test_makefile.py::test_makeout 
 enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw1] [ 50%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
-[gw0] [ 66%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
-[gw2] [ 83%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 enbasics/badges/test/test_badges.py::test_Badge 
+[gw0] [ 50%] PASSED enbasics/badges/test/test_badges.py::test_Badge_cover 
+[gw3] [ 66%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile 
+[gw2] [ 83%] PASSED enbasics/makefile/test/test_makefile.py::test_makefile_cover 
 [gw1] [100%] PASSED enbasics/badges/test/test_badges.py::test_Badge 
 
 =============================== warnings summary ===============================
@@ -32,7 +32,7 @@ enbasics/badges/test/test_badges.py::test_Badge
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.12.15-final-0 _______________
+_______________ coverage: platform linux, python 3.12.16-final-0 _______________
 
 Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
@@ -52,7 +52,7 @@ enbasics/makefile/test/__init__.py            2      0   100%
 enbasics/makefile/test/test_makefile.py      34      0   100%
 -------------------------------------------------------------
 TOTAL                                       212      0   100%
-========================= 6 passed, 1 warning in 4.40s =========================
+========================= 6 passed, 1 warning in 5.06s =========================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
